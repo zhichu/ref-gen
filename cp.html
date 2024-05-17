@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8 />
+    <script src="https://cdn.jsdelivr.net/gh/marcinwrochna/abbrevIso/browserBundle.js"></script>
+    <script src="ltwa.js"></script>
+    <script src="bib.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/gh/zhichu/newtxtt-otf/newtxtt.css" rel="stylesheet"/>
+    <style>
+      .non-mandatory {
+      display: none;
+      }
+
+      .mandatory {
+      }
+
+      #to_full_result {
+      background-color: Lime;
+      }
+
+      #refform {
+      padding: 5px;
+      background-color: AntiqueWhite;
+      }
+
+      #fetchdoi_doi {
+      color: MediumVioletRed;
+      font-weight: bold;
+      font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <br>
+    <input size="100" placeholder="Paste the reference entry here" id="rawref">
+    <br>
+    <p id="rawrefp"></p>
+
+    <div>
+      <select name="reftype" id="reftype" required>
+        <option value="" disabled selected hidden>select the type of the reference</option>
+        <optgroup label="article">
+          <option value="article">journal</option>
+          <option value="inproc">in proceedings</option>
+          <option value="inbook">in book</option>
+        </optgroup>
+        <optgroup label="book">
+          <option value="book">book</option>
+          <option value="proc">proceedings</option>
+        </optgroup>
+        <optgroup label="unpublished">
+          <option value="unpub">unpublished</option>
+          <option value="submitted">submitted</option>
+          <option value="tobepub">to be published</option>
+          <option value="presented">presented in event</option>
+          <option value="thisconf">this conference</option>
+        </optgroup>
+        <optgroup label="report">
+          <option value="techrep">tech. report</option>
+        </optgroup>
+        <optgroup label="dissertation">
+          <option value="master">master thesis</option>
+          <option value="phd">PhD thesis</option>
+        </optgroup>
+        <optgroup label="online">
+          <option value="arxiv">arXiv</option>
+          <option value="webpage">web page</option>
+        </optgroup>
+        <!--
+            <option value=""></option>
+            -->
+      </select>
+      or
+      <select name='jacow_ev' id='jacow_ev'>
+        <option value='' selected='selected'>a JACoW event</option>
+      </select>
+      in
+      <select name='jacow_yr' id='jacow_yr'>
+        <option value='' selected='selected'>a year</option>
+      </select>
+    </div>
+    <br>
+
+    <p id="ref-type-desc"></p>
+    <br>
+
+    <button id='to_full_result'>Click Me!</button>
+    <br>
+    <div id="refform"></div>
+
+  </body>
+</html>
